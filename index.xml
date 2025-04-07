@@ -5,5 +5,14 @@
         <description>Hugo theme - LoveIt</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 07 Apr 2025 15:45:37 &#43;0800</lastBuildDate>
             <atom:link href="https://example.com/index.xml" rel="self" type="application/rss+xml" />
-        </channel>
+        <item>
+    <title>First_post</title>
+    <link>https://example.com/first_post/</link>
+    <pubDate>Mon, 07 Apr 2025 15:45:37 &#43;0800</pubDate>
+    <author>xxxx</author>
+    <guid>https://example.com/first_post/</guid>
+    <description><![CDATA[<h3 id="标题">标题</h3>
+<p>内容</p>]]></description>
+</item>
+</channel>
 </rss>
