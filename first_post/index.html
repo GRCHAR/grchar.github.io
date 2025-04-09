@@ -4,11 +4,11 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
-        <title>First_post - Grchar</title><meta name="Description" content="一个闲置博客"><meta property="og:url" content="https://example.com/first_post/">
+        <title>Redis 命令大全 - Grchar</title><meta name="Description" content="一个闲置博客"><meta property="og:url" content="https://example.com/first_post/">
   <meta property="og:site_name" content="Grchar">
-  <meta property="og:title" content="First_post">
-  <meta property="og:description" content="标题 内容
-func main() { fmt.Println(&#34;hello world~&#34;) }">
+  <meta property="og:title" content="Redis 命令大全">
+  <meta property="og:description" content="Redis 是一个开源的键值对存储数据库，支持多种数据结构。本文整理了常用的 Redis 命令，方便快速查阅。
+🔑 基础命令 键操作 命令 语法 描述 DEL DEL key [key ...] 删除一个或多个键 EXISTS EXISTS key 检查键是否存在 EXPIRE EXPIRE key seconds 设置键的过期时间（秒） KEYS KEYS pattern 查找匹配模式的键（生产环境慎用） TTL TTL key 查看键剩余生存时间 TYPE TYPE key 获取键存储的数据类型 示例：">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -18,9 +18,9 @@ func main() { fmt.Println(&#34;hello world~&#34;) }">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://example.com/logo.png">
-  <meta name="twitter:title" content="First_post">
-  <meta name="twitter:description" content="标题 内容
-func main() { fmt.Println(&#34;hello world~&#34;) }">
+  <meta name="twitter:title" content="Redis 命令大全">
+  <meta name="twitter:description" content="Redis 是一个开源的键值对存储数据库，支持多种数据结构。本文整理了常用的 Redis 命令，方便快速查阅。
+🔑 基础命令 键操作 命令 语法 描述 DEL DEL key [key ...] 删除一个或多个键 EXISTS EXISTS key 检查键是否存在 EXPIRE EXPIRE key seconds 设置键的过期时间（秒） KEYS KEYS pattern 查找匹配模式的键（生产环境慎用） TTL TTL key 查看键剩余生存时间 TYPE TYPE key 获取键存储的数据类型 示例：">
 <meta name="application-name" content="Grchar">
 <meta name="apple-mobile-web-app-title" content="Grchar">
 <meta name="referrer" content="no-referrer" /><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
@@ -31,12 +31,12 @@ func main() { fmt.Println(&#34;hello world~&#34;) }">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "First_post",
+        "headline": "Redis 命令大全",
         "inLanguage": "zh-CN",
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/example.com\/first_post\/"
-        },"image": ["https:\/\/example.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","wordcount":  10 ,
+        },"image": ["https:\/\/example.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","wordcount":  697 ,
         "url": "https:\/\/example.com\/first_post\/","datePublished": "2025-04-07T15:45:37+08:00","dateModified": "2025-04-07T15:45:37+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "grchar","logo": "https:\/\/example.com\/images\/1.png"},"author": {
@@ -114,10 +114,10 @@ func main() { fmt.Println(&#34;hello world~&#34;) }">
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">First_post</h1><div class="post-meta">
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Redis 命令大全</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>grchar</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-04-07">2025-04-07</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 10 字&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 1 分钟&nbsp;<span id="/first_post/" class="leancloud_visitors" data-flag-title="First_post">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-04-07">2025-04-07</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 697 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 2 分钟&nbsp;<span id="/first_post/" class="leancloud_visitors" data-flag-title="Redis 命令大全">
                         <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
@@ -127,23 +127,290 @@ func main() { fmt.Println(&#34;hello world~&#34;) }">
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#-基础命令">🔑 基础命令</a>
       <ul>
-        <li><a href="#标题">标题</a></li>
+        <li><a href="#键操作">键操作</a></li>
       </ul>
     </li>
+    <li><a href="#-数据结构命令">🧮 数据结构命令</a>
+      <ul>
+        <li><a href="#字符串string">字符串（String）</a></li>
+        <li><a href="#列表list">列表（List）</a></li>
+        <li><a href="#哈希hash">哈希（Hash）</a></li>
+        <li><a href="#集合set">集合（Set）</a></li>
+        <li><a href="#有序集合sorted-set">有序集合（Sorted Set）</a></li>
+      </ul>
+    </li>
+    <li><a href="#-高级功能">🛠️ 高级功能</a>
+      <ul>
+        <li><a href="#事务">事务</a></li>
+        <li><a href="#发布订阅">发布订阅</a></li>
+        <li><a href="#持久化">持久化</a></li>
+      </ul>
+    </li>
+    <li><a href="#-服务器管理">🖥️ 服务器管理</a></li>
+    <li><a href="#-附录">📚 附录</a></li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><h3 id="标题">标题</h3>
-<p>内容</p>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
-    <div class="code-header language-golang">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;hello world~&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
+            </div><div class="content" id="content"><p>Redis 是一个开源的键值对存储数据库，支持多种数据结构。本文整理了常用的 Redis 命令，方便快速查阅。</p>
+<h2 id="-基础命令">🔑 基础命令</h2>
+<h3 id="键操作">键操作</h3>
+<table>
+  <thead>
+      <tr>
+          <th>命令</th>
+          <th>语法</th>
+          <th>描述</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>DEL</td>
+          <td><code>DEL key [key ...]</code></td>
+          <td>删除一个或多个键</td>
+      </tr>
+      <tr>
+          <td>EXISTS</td>
+          <td><code>EXISTS key</code></td>
+          <td>检查键是否存在</td>
+      </tr>
+      <tr>
+          <td>EXPIRE</td>
+          <td><code>EXPIRE key seconds</code></td>
+          <td>设置键的过期时间（秒）</td>
+      </tr>
+      <tr>
+          <td>KEYS</td>
+          <td><code>KEYS pattern</code></td>
+          <td>查找匹配模式的键（生产环境慎用）</td>
+      </tr>
+      <tr>
+          <td>TTL</td>
+          <td><code>TTL key</code></td>
+          <td>查看键剩余生存时间</td>
+      </tr>
+      <tr>
+          <td>TYPE</td>
+          <td><code>TYPE key</code></td>
+          <td>获取键存储的数据类型</td>
+      </tr>
+  </tbody>
+</table>
+<p>示例：</p>
+<p>SET mykey &ldquo;Hello&rdquo;<br>
+EXPIRE mykey 60<br>
+TTL mykey # 返回剩余秒数</p>
+<hr>
+<h2 id="-数据结构命令">🧮 数据结构命令</h2>
+<h3 id="字符串string">字符串（String）</h3>
+<table>
+  <thead>
+      <tr>
+          <th>命令</th>
+          <th>语法</th>
+          <th>描述</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>SET</td>
+          <td><code>SET key value [EX seconds]</code></td>
+          <td>设置键值</td>
+      </tr>
+      <tr>
+          <td>GET</td>
+          <td><code>GET key</code></td>
+          <td>获取值</td>
+      </tr>
+      <tr>
+          <td>INCR</td>
+          <td><code>INCR key</code></td>
+          <td>值自增1</td>
+      </tr>
+      <tr>
+          <td>APPEND</td>
+          <td><code>APPEND key value</code></td>
+          <td>追加字符串</td>
+      </tr>
+      <tr>
+          <td>STRLEN</td>
+          <td><code>STRLEN key</code></td>
+          <td>获取字符串长度</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="列表list">列表（List）</h3>
+<table>
+  <thead>
+      <tr>
+          <th>命令</th>
+          <th>语法</th>
+          <th>描述</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>LPUSH</td>
+          <td><code>LPUSH key element [element ...]</code></td>
+          <td>左侧插入元素</td>
+      </tr>
+      <tr>
+          <td>RPOP</td>
+          <td><code>RPOP key</code></td>
+          <td>移除并获取最后一个元素</td>
+      </tr>
+      <tr>
+          <td>LRANGE</td>
+          <td><code>LRANGE key start stop</code></td>
+          <td>获取列表片段</td>
+      </tr>
+      <tr>
+          <td>LINDEX</td>
+          <td><code>LINDEX key index</code></td>
+          <td>通过索引获取元素</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="哈希hash">哈希（Hash）</h3>
+<table>
+  <thead>
+      <tr>
+          <th>命令</th>
+          <th>语法</th>
+          <th>描述</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>HSET</td>
+          <td><code>HSET key field value</code></td>
+          <td>设置哈希字段值</td>
+      </tr>
+      <tr>
+          <td>HGET</td>
+          <td><code>HGET key field</code></td>
+          <td>获取字段值</td>
+      </tr>
+      <tr>
+          <td>HGETALL</td>
+          <td><code>HGETALL key</code></td>
+          <td>获取所有字段和值</td>
+      </tr>
+      <tr>
+          <td>HDEL</td>
+          <td><code>HDEL key field [field ...]</code></td>
+          <td>删除字段</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="集合set">集合（Set）</h3>
+<table>
+  <thead>
+      <tr>
+          <th>命令</th>
+          <th>语法</th>
+          <th>描述</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>SADD</td>
+          <td><code>SADD key member [member ...]</code></td>
+          <td>添加元素</td>
+      </tr>
+      <tr>
+          <td>SMEMBERS</td>
+          <td><code>SMEMBERS key</code></td>
+          <td>获取所有元素</td>
+      </tr>
+      <tr>
+          <td>SINTER</td>
+          <td><code>SINTER key [key ...]</code></td>
+          <td>求多个集合的交集</td>
+      </tr>
+      <tr>
+          <td>SISMEMBER</td>
+          <td><code>SISMEMBER key member</code></td>
+          <td>判断元素是否存在</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="有序集合sorted-set">有序集合（Sorted Set）</h3>
+<table>
+  <thead>
+      <tr>
+          <th>命令</th>
+          <th>语法</th>
+          <th>描述</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>ZADD</td>
+          <td><code>ZADD key score member [score member ...]</code></td>
+          <td>添加带分数的元素</td>
+      </tr>
+      <tr>
+          <td>ZRANGE</td>
+          <td><code>ZRANGE key start stop [WITHSCORES]</code></td>
+          <td>按索引范围获取元素</td>
+      </tr>
+      <tr>
+          <td>ZREVRANK</td>
+          <td><code>ZREVRANK key member</code></td>
+          <td>获取元素的逆序排名</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="-高级功能">🛠️ 高级功能</h2>
+<h3 id="事务">事务</h3>
+<p>MULTI # 开始事务<br>
+SET a 100<br>
+SET b 200<br>
+EXEC # 执行事务</p>
+<h3 id="发布订阅">发布订阅</h3>
+<p>SUBSCRIBE channel # 订阅频道<br>
+PUBLISH channel &ldquo;message&rdquo; # 发布消息</p>
+<h3 id="持久化">持久化</h3>
+<p>SAVE # 同步保存数据到磁盘<br>
+BGSAVE # 后台保存数据</p>
+<hr>
+<h2 id="-服务器管理">🖥️ 服务器管理</h2>
+<table>
+  <thead>
+      <tr>
+          <th>命令</th>
+          <th>描述</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>INFO</code></td>
+          <td>查看服务器信息</td>
+      </tr>
+      <tr>
+          <td><code>CONFIG GET *</code></td>
+          <td>获取配置参数</td>
+      </tr>
+      <tr>
+          <td><code>CLIENT LIST</code></td>
+          <td>查看连接的客户端</td>
+      </tr>
+      <tr>
+          <td><code>FLUSHALL</code></td>
+          <td>删除所有数据库数据（慎用）</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="-附录">📚 附录</h2>
+<ol>
+<li>使用 <code>HELP</code> 命令获取实时帮助：HELP @list # 查看列表相关命令帮助</li>
+<li>推荐使用 <code>SCAN</code> 代替 <code>KEYS</code> 遍历键</li>
+<li>事务不保证原子性，执行中出错不会回滚已执行命令
+提示：建议结合 Redis 官方文档（https://redis.io/commands）获取最新命令信息。</li>
+</ol>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
@@ -155,7 +422,7 @@ func main() { fmt.Println(&#34;hello world~&#34;) }">
                             <a class="link-to-markdown" href="/first_post/index.md" target="_blank">阅读原始文档</a>
                         </span></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="分享到 X" data-sharer="x" data-url="https://example.com/first_post/" data-title="First_post"><i class="fab fa-x-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Threads" data-sharer="threads" data-url="https://example.com/first_post/" data-title="First_post"><i class="fab fa-threads fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://example.com/first_post/"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://example.com/first_post/" data-title="First_post"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://example.com/first_post/" data-title="First_post"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@14.9.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://example.com/first_post/" data-title="First_post" data-ralateuid="xxxx"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Diaspora" data-sharer="diaspora" data-url="https://example.com/first_post/" data-title="First_post" data-description=""><i class="fab fa-diaspora fa-fw" aria-hidden="true"></i></a><a href="https://t.me/share/url?url=https%3a%2f%2fexample.com%2ffirst_post%2f&amp;text=First_post" target="_blank" title="分享到 Telegram"><i class="fab fa-telegram fa-fw" aria-hidden="true"></i></a></span>
+                <span><a href="javascript:void(0);" title="分享到 X" data-sharer="x" data-url="https://example.com/first_post/" data-title="Redis 命令大全"><i class="fab fa-x-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Threads" data-sharer="threads" data-url="https://example.com/first_post/" data-title="Redis 命令大全"><i class="fab fa-threads fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://example.com/first_post/"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://example.com/first_post/" data-title="Redis 命令大全"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://example.com/first_post/" data-title="Redis 命令大全"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@14.9.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://example.com/first_post/" data-title="Redis 命令大全" data-ralateuid="xxxx"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Diaspora" data-sharer="diaspora" data-url="https://example.com/first_post/" data-title="Redis 命令大全" data-description=""><i class="fab fa-diaspora fa-fw" aria-hidden="true"></i></a><a href="https://t.me/share/url?url=https%3a%2f%2fexample.com%2ffirst_post%2f&amp;text=Redis%20%e5%91%bd%e4%bb%a4%e5%a4%a7%e5%85%a8" target="_blank" title="分享到 Telegram"><i class="fab fa-telegram fa-fw" aria-hidden="true"></i></a></span>
             </div>
         </div>
     </div>

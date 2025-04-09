@@ -5,21 +5,56 @@
         <description>所有文章 | Grchar</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>806762029@qq.com (grchar)</managingEditor>
             <webMaster>806762029@qq.com (grchar)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 07 Apr 2025 15:45:37 &#43;0800</lastBuildDate><atom:link href="https://example.com/posts/" rel="self" type="application/rss+xml" /><item>
-    <title>First_post</title>
+    <title>Redis 命令大全</title>
     <link>https://example.com/first_post/</link>
     <pubDate>Mon, 07 Apr 2025 15:45:37 &#43;0800</pubDate>
     <author>grchar</author>
     <guid>https://example.com/first_post/</guid>
-    <description><![CDATA[<h3 id="标题">标题</h3>
-<p>内容</p>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
-    <div class="code-header language-golang">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;hello world~&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>]]></description>
+    <description><![CDATA[<p>Redis 是一个开源的键值对存储数据库，支持多种数据结构。本文整理了常用的 Redis 命令，方便快速查阅。</p>
+<h2 id="-基础命令">🔑 基础命令</h2>
+<h3 id="键操作">键操作</h3>
+<table>
+  <thead>
+      <tr>
+          <th>命令</th>
+          <th>语法</th>
+          <th>描述</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>DEL</td>
+          <td><code>DEL key [key ...]</code></td>
+          <td>删除一个或多个键</td>
+      </tr>
+      <tr>
+          <td>EXISTS</td>
+          <td><code>EXISTS key</code></td>
+          <td>检查键是否存在</td>
+      </tr>
+      <tr>
+          <td>EXPIRE</td>
+          <td><code>EXPIRE key seconds</code></td>
+          <td>设置键的过期时间（秒）</td>
+      </tr>
+      <tr>
+          <td>KEYS</td>
+          <td><code>KEYS pattern</code></td>
+          <td>查找匹配模式的键（生产环境慎用）</td>
+      </tr>
+      <tr>
+          <td>TTL</td>
+          <td><code>TTL key</code></td>
+          <td>查看键剩余生存时间</td>
+      </tr>
+      <tr>
+          <td>TYPE</td>
+          <td><code>TYPE key</code></td>
+          <td>获取键存储的数据类型</td>
+      </tr>
+  </tbody>
+</table>
+<p>示例：</p>]]></description>
 </item>
 </channel>
 </rss>
